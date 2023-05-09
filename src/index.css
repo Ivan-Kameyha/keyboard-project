@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+*{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
 body {
   background: #093028; /* fallback for old browsers */
   background: -webkit-linear-gradient(

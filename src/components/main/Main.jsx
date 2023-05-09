@@ -1,14 +1,14 @@
 import React from "react";
-import "../styles/main.css";
+import "./Main.css";
 
-export function Main() {
+export const Main = () => {
   document.addEventListener("keydown", function (event) {
     // Colorear teclas
     const key = event.code;
     const button = document.querySelector(`#${key}`);
 
     if (button) {
-      button.classList.add('active');
+      button.classList.add("active");
     }
 
     // Scroll de la tecla "enter"
@@ -25,15 +25,15 @@ export function Main() {
     }
   });
 
-  document.addEventListener("keyup", function(event) {
+  document.addEventListener("keyup", function (event) {
     // Descolorear teclas
     const key = event.code;
     const button = document.querySelector(`#${key}`);
 
     if (button) {
-      button.classList.remove('active');
+      button.classList.remove("active");
     }
-  })
+  });
 
   return (
     <div>
@@ -64,10 +64,14 @@ export function Main() {
           <button id="Digit0">0</button>
           <button id="Minus">?</button>
           <button id="Equal">¿</button>
-          <button id="Backspace" className="backspace">Backspace</button>
+          <button id="Backspace" className="backspace">
+            Backspace
+          </button>
         </div>
         <div className="row two">
-          <button id="Tab" className="tab">Tab</button>
+          <button id="Tab" className="tab">
+            Tab
+          </button>
           <button id="KeyQ">Q</button>
           <button id="KeyW">W</button>
           <button id="KeyE">E</button>
@@ -79,11 +83,17 @@ export function Main() {
           <button id="KeyO">O</button>
           <button id="KeyP">P</button>
           <button id="BracketLeft">´</button>
-          <button id="BracketRight" className="otherKey">+</button>
-          <button id="Enter" className="enter">Enter</button>
+          <button id="BracketRight" className="otherKey">
+            +
+          </button>
+          <button id="Enter" className="enter">
+            Enter
+          </button>
         </div>
         <div className="row three">
-          <button id="CapsLock" className="bloqMayus">Bloq Mayus</button>
+          <button id="CapsLock" className="bloqMayus">
+            Bloq Mayus
+          </button>
           <button id="KeyA">A</button>
           <button id="KeyS">S</button>
           <button id="KeyD">D</button>
@@ -98,7 +108,9 @@ export function Main() {
           <button id="Backslash">&#125;</button>
         </div>
         <div className="row four">
-          <button id="ShiftLeft" className="shiftLeft">Shift</button>
+          <button id="ShiftLeft" className="shiftLeft">
+            Shift
+          </button>
           <button id="IntlBackslash">&lt;&gt;</button>
           <button id="KeyZ">Z</button>
           <button id="KeyX">X</button>
@@ -110,16 +122,32 @@ export function Main() {
           <button id="Comma">,</button>
           <button id="Period">.</button>
           <button id="Slash">-</button>
-          <button id="ShiftRight" className="shiftRight">Shift</button>
+          <button id="ShiftRight" className="shiftRight">
+            Shift
+          </button>
         </div>
         <div className="row five">
-          <button id="ControlLeft" className="otherKey">Ctrl</button>
-          <button id="MetaLeft" className="otherKey">Win</button>
-          <button id="AltLeft" className="otherKey">Alt</button>
-          <button id="Space" className="space">Space</button>
-          <button id="AltRight" className="otherKey">Alt</button>
-          <button id="MetaRight" className="otherKey">Win</button>
-          <button id="ControlRight" className="otherKey">Ctrl</button>
+          <button id="ControlLeft" className="otherKey">
+            Ctrl
+          </button>
+          <button id="MetaLeft" className="otherKey">
+            Win
+          </button>
+          <button id="AltLeft" className="otherKey">
+            Alt
+          </button>
+          <button id="Space" className="space">
+            Space
+          </button>
+          <button id="AltRight" className="otherKey">
+            Alt
+          </button>
+          <button id="MetaRight" className="otherKey">
+            Win
+          </button>
+          <button id="ControlRight" className="otherKey">
+            Ctrl
+          </button>
         </div>
       </div>
 
