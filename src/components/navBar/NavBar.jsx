@@ -11,7 +11,7 @@ export const NavBar = () => {
       <Container>
         {/* Enlace del Navbar que redirige al Home */}
         <Navbar.Brand as={Link} to="/">
-          <TextToSpeechButton text={"Home"} />
+          <TextToSpeechButton text={"Bienvenida"} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -20,13 +20,13 @@ export const NavBar = () => {
             <Nav.Link as={Link} to="/login" className="ms-5">
               <TextToSpeechButton text={"Login"} />
             </Nav.Link>
-            {/* Enlace de Registro */}
-            <Nav.Link as={Link} to="/register" className="ms-5">
-              <TextToSpeechButton text={"Registro"} />
-            </Nav.Link>
             {/* Enlace de Práctica */}
             <Nav.Link as={Link} to="/keyboard" className="ms-5">
               <TextToSpeechButton text={"Práctica"} />
+            </Nav.Link>
+            {/* Enlace de Pruebas de errores */}
+            <Nav.Link as={Link} to="/pruebas" className="ms-5">
+              <TextToSpeechButton text={"Prueba de errores"} />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

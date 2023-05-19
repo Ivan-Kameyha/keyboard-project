@@ -1,0 +1,83 @@
+.content-keyboard h3{
+    text-align: center;
+}
+
+.keyboard1 {
+    margin: auto;
+}
+
+.fila {
+  width: 100%;
+  height: 60px;
+}
+
+.uno,
+.dos,
+.tres,
+.cuatro,
+.cinco {
+  margin: 5px 0 0 0;
+}
+
+.btn-keys {
+  color: black;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: rgb(214, 214, 214);
+  box-shadow: -6px -5px 8px 0px #434343, -4px -3px 7px 0px #fff;
+  font-size: 18px;
+  margin-left: 7px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 20%;
+}
+
+.btn-keys:active {
+  box-shadow: 1px 1px 2px #fff8f8, -1px -1px 2px #434343;
+}
+
+.backspace {
+  width: 125px;
+  border-radius: 10px;
+}
+
+.tab {
+  width: 95px;
+  border-radius: 10px;
+}
+
+.enter {
+  width: 60px;
+  height: 120px;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.bloqMayus {
+  width: 115px;
+  border-radius: 10px;
+}
+
+.otherKey {
+  width: 70px;
+  border-radius: 10px;
+}
+
+.shiftLeft {
+  width: 80px;
+  border-radius: 10px;
+}
+
+.shiftRight {
+  width: 150px;
+  border-radius: 10px;
+}
+
+.space {
+  width: 400px;
+  border-radius: 10px;
+}
+
+.btn-keys.active {
+  background-color: red;
+}

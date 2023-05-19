@@ -29,14 +29,32 @@ export const Keyboard = ({ onKeyPress }) => {
       if (event.keyCode === 27) {
         window.location.href = "/"; // Redirecciona a la página raíz si se presiona la tecla Esc (keyCode 27)
       }
+
+      // Cambiar color
+      const key = event.key.toUpperCase();
+      const button = document.querySelector(`#${key}`);
+      if (button) {
+        button.classList.add("active");
+      }
     };
+
+    const handleKeyUp = (event) => {
+      // Quitar color
+      const key = event.key.toUpperCase();
+      const button = document.querySelector(`#${key}`);
+      if (button) {
+        button.classList.remove("active");
+      }
+    }
 
     // Agrega el evento "keydown" al documento y llama a handleKeyDown al presionar una tecla
     document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("keyup", handleKeyUp);
 
     // Remueve el evento "keydown" del documento al desmontar el componente
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("keyup", handleKeyUp);
     };
   }, [onKeyPress]);
 
@@ -47,6 +65,7 @@ export const Keyboard = ({ onKeyPress }) => {
         <Button
           key={key}
           className="keyboard-button"
+          id={key}
           onKeyDown={(event) => handleKeyDown(event, key)}
         >
           {key}

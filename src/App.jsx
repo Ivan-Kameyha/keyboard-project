@@ -3,9 +3,11 @@ import { Main } from "./components/main/Main";
 import { Home } from "./components/home/Home";
 import { Login } from "./components/login/Login";
 import { Register } from "./components/register/Register";
-import { Pruebas } from "./components/Pruebas/Pruebas";
+import { Pruebas } from "./components/pruebas/Pruebas";
 import { NavBar } from "./components/navBar/NavBar";
 import { Keyboard } from "./components/keyboard/Keyboard";
+import { AuthProvider } from "./context/AuthContext";
+import { ProtectedPath } from "./components/protectedPath/protectedPath";
 
 function App() {
   const handleKeyPress = (key) => {
@@ -17,13 +19,15 @@ function App() {
       {/* Renderiza el componente NavBar */}
       <NavBar />
 
-      {/* Configura las rutas de la aplicación */}
+      {/* AuthProvider engloba a todas las rutas por ende los componentes tienen acceso a el */}
+      <AuthProvider>
+        {/* Configura las rutas de la aplicación */}
       <Routes>
         {/* Ruta para la página principal */}
         <Route path="/" element={<Main />} />
 
         {/* Ruta para la página de inicio */}
-        <Route path="/home" element={<Home />} />
+        <Route path="/home" element={<ProtectedPath><Home /></ProtectedPath>} /> {/*ruta protegida*/}
 
         {/* Ruta para la página de inicio de sesión */}
         <Route path="/login" element={<Login />} />
@@ -37,6 +41,7 @@ function App() {
         {/* Ruta para la página de pruebas */}
         <Route path="/pruebas" element={<Pruebas />} />
       </Routes>
+      </AuthProvider>
     </div>
   );
 }

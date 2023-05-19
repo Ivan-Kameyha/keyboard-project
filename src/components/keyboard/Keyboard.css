@@ -8,3 +8,7 @@
     height: 50px;
     margin: 10px;
 }
+
+.keyboard-button.active {
+    background-color: red;
+}
