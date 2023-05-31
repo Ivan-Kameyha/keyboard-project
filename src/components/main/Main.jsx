@@ -9,11 +9,11 @@ export const Main = () => {
       if (event.keyCode === 13) {
         window.location.href = "http://localhost:5173/keyboard";
       }
-  
+
       // Redireccionar a la página deseada al presionar Shift + 1 o Shift + 2
       if (event.shiftKey && event.keyCode === 49) {
         window.location.href = "http://localhost:5173/login";
-      } 
+      }
       if (event.shiftKey && event.keyCode === 50) {
         window.location.href = "http://localhost:5173/register";
       }

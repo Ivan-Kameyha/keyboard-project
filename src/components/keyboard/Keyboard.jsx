@@ -5,11 +5,54 @@ import "./Keyboard.css";
 export const Keyboard = ({ onKeyPress }) => {
   const keys = [
     // Lista de teclas del teclado
-    "1", "2", "3", "4", "5", "6", "7", "8", "9", "0",
-    "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P",
-    "A", "S", "D", "F", "G", "H", "J", "K", "L",
-    "Z", "X", "C", "V", "B", "N", "M",
-    " ", "Ctrl", "Alt", "Shift", "Alt Gr", "Tab", "Caps Lock", "Enter", ",", ".", "<", "|"
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "0",
+    "Q",
+    "W",
+    "E",
+    "R",
+    "T",
+    "Y",
+    "U",
+    "I",
+    "O",
+    "P",
+    "A",
+    "S",
+    "D",
+    "F",
+    "G",
+    "H",
+    "J",
+    "K",
+    "L",
+    "Z",
+    "X",
+    "C",
+    "V",
+    "B",
+    "N",
+    "M",
+    " ",
+    "Ctrl",
+    "Alt",
+    "Shift",
+    "Alt Gr",
+    "Tab",
+    "Caps Lock",
+    "Enter",
+    ",",
+    ".",
+    "<",
+    "|",
   ];
 
   const speak = (text) => {
@@ -45,7 +88,7 @@ export const Keyboard = ({ onKeyPress }) => {
       if (button) {
         button.classList.remove("active");
       }
-    }
+    };
 
     // Agrega el evento "keydown" al documento y llama a handleKeyDown al presionar una tecla
     document.addEventListener("keydown", handleKeyDown);
@@ -59,7 +102,10 @@ export const Keyboard = ({ onKeyPress }) => {
   }, [onKeyPress]);
 
   return (
-    <Container fluid className="d-flex flex-wrap justify-content-center align-content-center keyboard-container">
+    <Container
+      fluid
+      className="d-flex flex-wrap justify-content-center align-content-center keyboard-container"
+    >
       {/* Renderiza los botones correspondientes a las teclas */}
       {keys.map((key) => (
         <Button

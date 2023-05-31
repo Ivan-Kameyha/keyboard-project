@@ -42,7 +42,7 @@ export const Register = () => {
     const handleKeyDown = (event) => {
       // Redireccionar a la página raíz con ESC
       if (event.keyCode === 27) {
-        window.location.href = "/";
+        window.location.href = "http://localhost:5173";
       }
     };
 

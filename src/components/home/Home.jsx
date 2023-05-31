@@ -1,6 +1,9 @@
+import { Button } from "react-bootstrap";
 import { useAuth } from "../../context/AuthContext";
+import CourseCard from "../courseCard/CourseCard";
+import { TextToSpeechButton } from "../textToSpeechButton/TextToSpeechButton";
 
-export function Home() {
+export const Home = () => {
   // se extrae el estado user, loading y la funcion logout del contexto
   const { user, logout, loading } = useAuth();
 
@@ -17,9 +20,21 @@ export function Home() {
     >
       <div className="text-center">
         <h1>Welcome {user.email}</h1>
-
-        <button onClick={handleLogout}>Logout</button>
+        <div className="container-courses d-flex justify-content-center flex-wrap">
+          <CourseCard
+            title={"Curso 1"}
+            description={"Descripción del curso 1"}
+          />
+          <CourseCard
+            title={"Curso 2"}
+            description={"Descripción del curso 2"}
+          />
+        </div>
+        <Button onClick={handleLogout}>
+          {/* Componente TextToSpeechButton con el texto del botón */}
+          <TextToSpeechButton text={"Logout"} />
+        </Button>
       </div>
     </div>
   );
-}
+};

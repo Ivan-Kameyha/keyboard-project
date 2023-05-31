@@ -12,7 +12,7 @@ const SessionCard = ({ title, button, handleSubmit, handleChange, error }) => {
 
     // ocultar o mostrar boton volver y mensaje de registro
     if (title === "Registro") {
-      linkRegister.classList.add("active"); 
+      linkRegister.classList.add("active");
       linkLogin.classList.remove("active");
     }
   });
@@ -55,9 +55,14 @@ const SessionCard = ({ title, button, handleSubmit, handleChange, error }) => {
         </p>
 
         <Link to="/login">
-          <button className="btn-volver link-login active" id="link-login">
-            Volver
-          </button>
+          <Button
+            variant="primary"
+            className="btn-volver link-login active"
+            id="link-login"
+          >
+            {/* Componente TextToSpeechButton con el texto del botón */}
+            <TextToSpeechButton text={"Volver"} />
+          </Button>
         </Link>
       </div>
     </div>
