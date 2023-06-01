@@ -1,14 +1,27 @@
 .keyboard-container{
-    width: 80%;
     height: 100vh;
 }
 
 .keyboard-button{
-    min-width: 50px;
-    height: 50px;
-    margin: 10px;
+    min-width: 40px;
+    height: 40px;
+    margin: 5px;
 }
 
-.keyboard-button.active {
-    background-color: red;
+#Tab, #Enter{
+    min-width: 77px;
 }
+
+#Shift-Der  {
+    min-width: 120px;
+}
+
+#Space {
+    min-width: 335px;
+}
+
+.pressed {
+    background-color: red; /* Color de fondo para botones presionados */
+    color: white; /* Color de texto para botones presionados */
+  }
+

@@ -2,9 +2,27 @@ import React, { useEffect } from "react";
 import "./Main.css";
 
 export const Main = () => {
+  let cont = 0;
+
+  const speak = (text) => {
+    // Función para generar el sonido de la tecla
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "es-MX";
+    utterance.pitch = 0.8;
+    utterance.rate = 0.7;
+    speechSynthesis.speak(utterance);
+  };
+
   useEffect(() => {
     // Función para manejar el evento de presionar teclas
     const handleKeyDown = (event) => {
+      if (cont === 0) {
+        speak(
+          "Bienvenidos a la plataforma de aprendizaje inclusivo, presione enter para continuar"
+        );
+        cont = 1;
+      }
+
       // Redireccionar a la página de "teclado digital" con Enter
       if (event.keyCode === 13) {
         window.location.href = "http://localhost:5173/keyboard";

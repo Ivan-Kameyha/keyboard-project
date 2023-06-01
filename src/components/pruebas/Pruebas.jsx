@@ -50,12 +50,12 @@ export const Pruebas = () => {
       }
     };
 
-    window.addEventListener("keydown", handleKeyPress);
-    window.addEventListener("keyup", handleKeyUp);
+    document.addEventListener("keydown", handleKeyPress);
+    document.addEventListener("keyup", handleKeyUp);
 
     return () => {
-      window.addEventListener("keydown", handleKeyPress);
-      window.removeEventListener("keyup", handleKeyUp);
+      document.addEventListener("keydown", handleKeyPress);
+      document.removeEventListener("keyup", handleKeyUp);
     };
   }, []);
 
