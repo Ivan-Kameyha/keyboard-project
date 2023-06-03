@@ -1,0 +1,16 @@
+.courses-button{
+    height: 250px;
+    width: 250px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .7);
+    margin: 20px;
+}
+
+.courses-button .textToSpeech{
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.profile-icon{
+    font-size: 80px;
+    margin: 20px;
+}

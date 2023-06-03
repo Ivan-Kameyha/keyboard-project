@@ -3,7 +3,6 @@ import { Main } from "./components/main/Main";
 import { Home } from "./components/home/Home";
 import { Login } from "./components/login/Login";
 import { Register } from "./components/register/Register";
-import { Pruebas } from "./components/pruebas/Pruebas";
 import { NavBar } from "./components/navBar/NavBar";
 import { Keyboard } from "./components/keyboard/Keyboard";
 import { AuthProvider } from "./context/AuthContext";
@@ -37,9 +36,6 @@ function App() {
 
         {/* Ruta para la página de teclado */}
         <Route path="/keyboard" element={<Keyboard onKeyPress={handleKeyPress} />} />
-
-        {/* Ruta para la página de pruebas */}
-        <Route path="/pruebas" element={<Pruebas />} />
       </Routes>
       </AuthProvider>
     </div>

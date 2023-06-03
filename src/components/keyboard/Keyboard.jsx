@@ -71,18 +71,32 @@ export const Keyboard = () => {
   const speak = (text) => {
     // Función para generar el sonido de la tecla
     const utterance = new SpeechSynthesisUtterance("tecla " + text);
-    utterance.lang = "es-MX";
-    utterance.pitch = 0.8;
-    utterance.rate = 0.7;
+    utterance.lang = "es-CO";
+    utterance.pitch = 0.9;
+    utterance.rate = 0.8;
     speechSynthesis.speak(utterance);
   };
 
   const [pressedKey, setPressedKey] = useState(""); // Estado para almacenar la tecla presionada
 
+  const specialCases = {
+    Escape: "Esc",
+    ControlLeft: "Control",
+    Tab: "Tab",
+    CapsLock: "BlockMayus",
+    ShiftLeft: "Shift-Izq",
+    ShiftRight: "Shift-Der",
+    IntlBackslash: "<>",
+    AltLeft: "Alt",
+    MetaLeft: "Wind",
+  };
+
+
   // Función para manejar el evento de tecla presionada
   const handleKeyDown = (event) => {
     // Manejador de evento al presionar una tecla
     speak(event.key); // Invoca la función speak para generar el sonido de la tecla presionada
+    console.log(event.keyCode);
     if (event.keyCode === 27) {
       window.location.href = "/"; // Redirecciona a la página raíz si se presiona la tecla Esc (keyCode 27)
     }
@@ -114,17 +128,7 @@ export const Keyboard = () => {
     }
 
     // Colorear teclas
-    const specialCases = {
-      Escape: "Esc",
-      ControlLeft: "Control",
-      Tab: "Tab",
-      CapsLock: "BlockMayus",
-      ShiftLeft: "Shift-Izq",
-      ShiftRight: "Shift-Der",
-      IntlBackslash: "<>",
-      AltLeft: "Alt",
-      MetaLeft: "Wind",
-    };
+    
 
     const buttonId = specialCases[specialKeys];
     if (buttonId) {
@@ -142,17 +146,7 @@ export const Keyboard = () => {
     // Descolorear
     const specialKeys = event.code;
 
-    const specialCases = {
-      Escape: "Esc",
-      ControlLeft: "Control",
-      Tab: "Tab",
-      CapsLock: "BlockMayus",
-      ShiftLeft: "Shift-Izq",
-      ShiftRight: "Shift-Der",
-      IntlBackslash: "<>",
-      AltLeft: "Alt",
-      MetaLeft: "Wind",
-    };
+    
 
     const buttonId = specialCases[specialKeys];
     if (buttonId) {
