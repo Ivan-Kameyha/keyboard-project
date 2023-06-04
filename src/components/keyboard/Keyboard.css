@@ -8,6 +8,15 @@
     margin: 5px;
 }
 
+.btn-normal {
+    width: 50px;
+    height: 50px;
+}
+
+.btn-pressed {
+    font-size: 5rem;
+}
+
 #Tab, #Enter{
     min-width: 77px;
 }

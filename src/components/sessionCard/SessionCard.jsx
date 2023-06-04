@@ -3,7 +3,8 @@ import Form from "react-bootstrap/Form";
 import "./SessionCard.css";
 import { Link } from "react-router-dom";
 import { TextToSpeechButton } from "../textToSpeechButton/TextToSpeechButton";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Sonido from '../shortcutKeys/Sonido'
 
 const SessionCard = ({ title, button, handleSubmit, handleChange, error }) => {
   useEffect(() => {
@@ -16,6 +17,11 @@ const SessionCard = ({ title, button, handleSubmit, handleChange, error }) => {
       linkLogin.classList.remove("active");
     }
   });
+
+  // funcion para reproducir voz al input enfocado
+  const handleFocus = (inputName) => {
+    Sonido.speak(inputName)
+  };
 
   return (
     <div className="wrapper bg-light">
@@ -31,6 +37,8 @@ const SessionCard = ({ title, button, handleSubmit, handleChange, error }) => {
               name="email"
               placeholder="Enter email"
               onChange={handleChange}
+              onFocus={() => handleFocus("Ingrese su correo electronico")}
+              autoFocus
             />
           </Form.Group>
           {/* Campo de entrada para la contraseña */}
@@ -41,23 +49,24 @@ const SessionCard = ({ title, button, handleSubmit, handleChange, error }) => {
               name="password"
               placeholder="Enter Password"
               onChange={handleChange}
+              onFocus={() => handleFocus("Ingrese su contraseña")}
             />
           </Form.Group>
           {/* Botón de envío del formulario */}
-          <Button variant="primary" type="submit" className="submitBtn">
+          <Button variant="primary" type="submit" className="submitBtn" onFocus={() => handleFocus(button)}>
             {/* Componente TextToSpeechButton con el texto del botón */}
             <TextToSpeechButton text={button} />
           </Button>
         </Form>
 
         <p className="link-register" id="link-register">
-          ¿No tienes una cuenta? <Link to="/register">Registrarme</Link>
+          ¿No tienes una cuenta? <Link to="/register" onFocus={() => handleFocus("Registrar cuenta nueva")}>Registrarme</Link>
         </p>
 
-        <Link to="/login">
+        <Link to="/login" onFocus={() => handleFocus("Volver atras")}>
           <Button
             variant="primary"
-            className="btn-volver link-login active"
+            className="btn-volver link-login active my-3"
             id="link-login"
           >
             {/* Componente TextToSpeechButton con el texto del botón */}

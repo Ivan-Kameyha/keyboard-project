@@ -18,15 +18,15 @@ export const NavBar = () => {
           <Nav className="me-auto">
             {/* Enlace de Login */}
             <Nav.Link as={Link} to="/login" className="ms-5">
-              <TextToSpeechButton text={"Login"} />
+              <TextToSpeechButton text={"Iniciar Sesión"} />
             </Nav.Link>
             {/* Enlace de Práctica */}
             <Nav.Link as={Link} to="/keyboard" className="ms-5">
-              <TextToSpeechButton text={"Práctica"} />
+              <TextToSpeechButton text={"Práctica de escritura"} />
             </Nav.Link>
-            {/* Enlace de Pruebas de errores */}
-            <Nav.Link as={Link} to="/pruebas" className="ms-5">
-              <TextToSpeechButton text={"Prueba de errores"} />
+            {/* Enlace de Manual de usuario */}
+            <Nav.Link as={Link} to="/usermanual" className="ms-5">
+              <TextToSpeechButton text={"Manual de usuario"} />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Container, Button } from "react-bootstrap";
 import "./Keyboard.css";
+import {ShortcutKeys} from '../shortcutKeys/ShortcutKeys'
+import Sonido from '../shortcutKeys/Sonido'
 
 export const Keyboard = () => {
   const keys = [
@@ -68,15 +70,6 @@ export const Keyboard = () => {
     "Control",
   ];
 
-  const speak = (text) => {
-    // Función para generar el sonido de la tecla
-    const utterance = new SpeechSynthesisUtterance("tecla " + text);
-    utterance.lang = "es-CO";
-    utterance.pitch = 0.9;
-    utterance.rate = 0.8;
-    speechSynthesis.speak(utterance);
-  };
-
   const [pressedKey, setPressedKey] = useState(""); // Estado para almacenar la tecla presionada
 
   const specialCases = {
@@ -91,15 +84,9 @@ export const Keyboard = () => {
     MetaLeft: "Wind",
   };
 
-
   // Función para manejar el evento de tecla presionada
   const handleKeyDown = (event) => {
-    // Manejador de evento al presionar una tecla
-    speak(event.key); // Invoca la función speak para generar el sonido de la tecla presionada
-    console.log(event.keyCode);
-    if (event.keyCode === 27) {
-      window.location.href = "/"; // Redirecciona a la página raíz si se presiona la tecla Esc (keyCode 27)
-    }
+    Sonido.speak("Tecla " + event.key);
 
     const key = event.key.toUpperCase();
     const specialKeys = event.code;
@@ -128,7 +115,6 @@ export const Keyboard = () => {
     }
 
     // Colorear teclas
-    
 
     const buttonId = specialCases[specialKeys];
     if (buttonId) {
@@ -145,8 +131,6 @@ export const Keyboard = () => {
 
     // Descolorear
     const specialKeys = event.code;
-
-    
 
     const buttonId = specialCases[specialKeys];
     if (buttonId) {
@@ -192,8 +176,12 @@ export const Keyboard = () => {
         <div></div>
       </div>
       <div className="col-md-5 text-center">
-        <h1>Tecla Presionada: {pressedKey}</h1>
+        <h1>Tecla Presionada:</h1>
+        <Button className={pressedKey ? "btn-pressed" : "btn-normal"}>
+          {pressedKey}
+        </Button>
       </div>
+      <ShortcutKeys />
     </Container>
   );
 };

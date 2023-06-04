@@ -1,8 +1,9 @@
 import { Button } from "react-bootstrap";
 import { BsPersonCircle } from "react-icons/bs";
-import './Home.css';
+import "./Home.css";
 import { useAuth } from "../../context/AuthContext";
 import { TextToSpeechButton } from "../textToSpeechButton/TextToSpeechButton";
+import {ShortcutKeys} from '../shortcutKeys/ShortcutKeys'
 
 export const Home = () => {
   // se extrae el estado user, loading y la funcion logout del contexto
@@ -20,21 +21,36 @@ export const Home = () => {
       style={{ color: "black" }}
     >
       <div className="text-center">
-        <h1><BsPersonCircle className="profile-icon"/>{user.email}</h1>
+        <h1>
+          <BsPersonCircle className="profile-icon" />
+          {user.email}
+        </h1>
         <div className="courses-container d-flex justify-content-around flex-wrap">
-          <Button onClick={handleLogout} className="courses-button bg-warning text-dark border-0">
+          <Button
+            onClick={handleLogout}
+            className="courses-button bg-warning text-dark border-0"
+          >
             {/* Componente TextToSpeechButton con el texto del botón */}
             <TextToSpeechButton text={"Mi perfíl"} />
           </Button>
-          <Button onClick={handleLogout} className="courses-button bg-primary border-0">
+          <Button
+            onClick={handleLogout}
+            className="courses-button bg-primary border-0"
+          >
             {/* Componente TextToSpeechButton con el texto del botón */}
             <TextToSpeechButton text={"Familiarización táctil"} />
           </Button>
-          <Button onClick={handleLogout} className="courses-button bg-success border-0">
+          <Button
+            onClick={handleLogout}
+            className="courses-button bg-success border-0"
+          >
             {/* Componente TextToSpeechButton con el texto del botón */}
             <TextToSpeechButton text={"Orientación espacial"} />
           </Button>
-          <Button onClick={handleLogout} className="courses-button bg-dark border-0">
+          <Button
+            onClick={handleLogout}
+            className="courses-button bg-dark border-0"
+          >
             {/* Componente TextToSpeechButton con el texto del botón */}
             <TextToSpeechButton text={"Practiquemos"} />
           </Button>
@@ -42,9 +58,10 @@ export const Home = () => {
 
         <Button onClick={handleLogout}>
           {/* Componente TextToSpeechButton con el texto del botón */}
-          <TextToSpeechButton text={"Logout"} />
+          <TextToSpeechButton text={"Cerrar sesion"} />
         </Button>
       </div>
+      <ShortcutKeys/>
     </div>
   );
 };

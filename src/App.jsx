@@ -21,26 +21,32 @@ function App() {
       {/* AuthProvider engloba a todas las rutas por ende los componentes tienen acceso a el */}
       <AuthProvider>
         {/* Configura las rutas de la aplicación */}
-      <Routes>
-        {/* Ruta para la página principal */}
-        <Route path="/" element={<Main />} />
-
-        {/* Ruta para la página de inicio */}
-        <Route path="/home" element={<ProtectedPath><Home /></ProtectedPath>} /> {/*ruta protegida*/}
-
-        {/* Ruta para la página de inicio de sesión */}
-        <Route path="/login" element={<Login />} />
-
-        {/* Ruta para la página de registro */}
-        <Route path="/register" element={<Register />} />
-
-        {/* Ruta para la página de teclado */}
-        <Route path="/keyboard" element={<Keyboard onKeyPress={handleKeyPress} />} />
-      </Routes>
+        <Routes>
+          {/* Ruta para la página principal */}
+          <Route path="/" element={<Main />} />
+          {/* Ruta para la página de inicio */}
+          <Route
+            path="/home"
+            element={
+              <ProtectedPath>
+                <Home />
+              </ProtectedPath>
+            }
+          />{" "}
+          {/*ruta protegida*/}
+          {/* Ruta para la página de inicio de sesión */}
+          <Route path="/login" element={<Login />} />
+          {/* Ruta para la página de registro */}
+          <Route path="/register" element={<Register />} />
+          {/* Ruta para la página de teclado */}
+          <Route
+            path="/keyboard"
+            element={<Keyboard onKeyPress={handleKeyPress} />}
+          />
+        </Routes>
       </AuthProvider>
     </div>
   );
 }
 
 export default App;
-
