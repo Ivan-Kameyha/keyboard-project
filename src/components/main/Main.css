@@ -39,19 +39,6 @@
   margin: 10px 0 0 0;
 }
 
-/*button {
-  color: black;
-  width: 50px;
-  height: 50px;
-  border: none;
-  background: rgb(214, 214, 214);
-  box-shadow: -6px -5px 8px 0px #434343, -4px -3px 7px 0px #fff;
-  font-size: 1.2rem;
-  margin-left: 7px;
-  font-family: Arial, Helvetica, sans-serif;
-  border-radius: 20%;
-}*/
-
 button:active {
   box-shadow: 1px 1px 2px #fff8f8, -1px -1px 2px #434343;
 }
@@ -106,4 +93,12 @@ button.active {
   color: white;
   margin: 0;
   text-align: center;
+}
+
+.footer h5{
+  font-size: 1rem;
+}
+
+.footer h6{
+  font-size: .8rem;
 }

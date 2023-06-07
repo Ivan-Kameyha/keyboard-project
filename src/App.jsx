@@ -7,6 +7,8 @@ import { NavBar } from "./components/navBar/NavBar";
 import { Keyboard } from "./components/keyboard/Keyboard";
 import { AuthProvider } from "./context/AuthContext";
 import { ProtectedPath } from "./components/protectedPath/protectedPath";
+import { UserManual } from "./components/userManual/UserManual";
+
 
 function App() {
   const handleKeyPress = (key) => {
@@ -17,7 +19,6 @@ function App() {
     <div className="bg-light">
       {/* Renderiza el componente NavBar */}
       <NavBar />
-
       {/* AuthProvider engloba a todas las rutas por ende los componentes tienen acceso a el */}
       <AuthProvider>
         {/* Configura las rutas de la aplicación */}
@@ -43,6 +44,8 @@ function App() {
             path="/keyboard"
             element={<Keyboard onKeyPress={handleKeyPress} />}
           />
+          {/* Ruta para la página de inicio de sesión */}
+          <Route path="/usermanual" element={<UserManual />} />
         </Routes>
       </AuthProvider>
     </div>

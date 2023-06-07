@@ -6,15 +6,19 @@
     min-width: 40px;
     height: 40px;
     margin: 5px;
+    transition: all 0.3s ease;
 }
 
 .btn-normal {
     width: 50px;
     height: 50px;
+    transition: all 0.1s ease;
 }
 
 .btn-pressed {
-    font-size: 5rem;
+    font-size: 6rem;
+    padding: 10px 30px;
+    transition: all 0.1s ease;
 }
 
 #Tab, #Enter{
@@ -32,5 +36,6 @@
 .pressed {
     background-color: red; /* Color de fondo para botones presionados */
     color: white; /* Color de texto para botones presionados */
+    transition: all 0.3s ease;
   }
 

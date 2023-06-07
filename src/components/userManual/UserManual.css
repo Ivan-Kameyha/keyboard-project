@@ -1,0 +1,15 @@
+.user-manual-title{
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.user-manual-subtitle{
+    font-weight: bold;
+    font-size: 2.2rem;
+}
+
+.user-manual-content p{
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: darkblue;
+}
