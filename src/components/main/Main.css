@@ -5,6 +5,16 @@
   height: 100vh;
 }
 
+.logo{
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.logo img{
+  width: 100%;
+}
+
 .banner h1 {
   font-size: 6rem;
   text-align: center;
