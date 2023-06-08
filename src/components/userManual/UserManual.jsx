@@ -28,7 +28,7 @@ Al pasar el puntero de mouse sobre ellos podrá escuchar el nombre del curso que
   useEffect(() => {
     if ("speechSynthesis" in window) {
       const utterance = new SpeechSynthesisUtterance();
-      utterance.text = TextContent.replace(/\n/g, " ");
+      utterance.text = TextContent;
       utterance.lang = "es-MX"; // Establecer el idioma a español (Mexico)
       utterance.pitch = 0.9; // Establecer el tono de voz
       utterance.rate = 0.9; // Establecer la velocidad de habla
@@ -42,7 +42,9 @@ Al pasar el puntero de mouse sobre ellos podrá escuchar el nombre del curso que
         <h2 className="user-manual-title text-center">Manual de usuario</h2>
         <div className="user-manual-content">
           <div className="seccion mb-5 mt-5">
-            <h3 className="user-manual-subtitle">Bienvenido al manual de usuario</h3>
+            <h3 className="user-manual-subtitle">
+              Bienvenido al manual de usuario
+            </h3>
             <p>
               En este manual se explica paso a paso y de forma gráfica la manera
               en cómo usted puede utilizar nuestro sitio web. Comprendemos lo
@@ -74,7 +76,9 @@ Al pasar el puntero de mouse sobre ellos podrá escuchar el nombre del curso que
             </p>
           </div>
           <div className="seccion mb-5 mt-5">
-            <h3 className="user-manual-subtitle">Registro e inicio de sesión</h3>
+            <h3 className="user-manual-subtitle">
+              Registro e inicio de sesión
+            </h3>
             <p>
               Este apartado es uno de los más importantes de nuestro sitio web.
               Es aquí donde usted podrá registrar su cuenta o bien iniciar
@@ -100,7 +104,10 @@ Al pasar el puntero de mouse sobre ellos podrá escuchar el nombre del curso que
               ingresar.
             </p>
             <p>
-            Si no tiene aun su cuenta al presionar la tecla "Tabulador" nuevamente en esta misma sección se seleccionará y escuchará la opción de Registrarme. Allí va a poder acceder a dicha sección presionando la tecla "Enter".
+              Si no tiene aun su cuenta al presionar la tecla "Tabulador"
+              nuevamente en esta misma sección se seleccionará y escuchará la
+              opción de Registrarme. Allí va a poder acceder a dicha sección
+              presionando la tecla "Enter".
             </p>
             <p>
               El funcionamiento del registro es exactamente igual al de Inicio

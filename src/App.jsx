@@ -9,7 +9,6 @@ import { AuthProvider } from "./context/AuthContext";
 import { ProtectedPath } from "./components/protectedPath/protectedPath";
 import { UserManual } from "./components/userManual/UserManual";
 
-
 function App() {
   const handleKeyPress = (key) => {
     console.log(key);
@@ -44,7 +43,7 @@ function App() {
             path="/keyboard"
             element={<Keyboard onKeyPress={handleKeyPress} />}
           />
-          {/* Ruta para la página de inicio de sesión */}
+          {/* Ruta para la página de manual de usuario */}
           <Route path="/usermanual" element={<UserManual />} />
         </Routes>
       </AuthProvider>

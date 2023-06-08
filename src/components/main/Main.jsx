@@ -2,17 +2,11 @@ import React, { useEffect } from "react";
 import "./Main.css";
 import { ShortcutKeys } from "../shortcutKeys/ShortcutKeys";
 import logoImage from "../../assets/Udyat-Logo.png";
+import Sonido from "../shortcutKeys/Sonido";
 
 export const Main = () => {
   useEffect(() => {
-    if ("speechSynthesis" in window) {
-      const utterance = new SpeechSynthesisUtterance();
-      utterance.text = "Bienvenidos a Udyat";
-      utterance.lang = "es-MX"; // Establecer el idioma a español (Mexico)
-      utterance.pitch = 0.9; // Establecer el tono de voz
-      utterance.rate = 0.9; // Establecer la velocidad de habla
-      speechSynthesis.speak(utterance); // Iniciar el efecto de voz con el objeto utterance
-    }
+    Sonido.speak("Bienvenidos a Udyat");
   }, []);
 
   return (

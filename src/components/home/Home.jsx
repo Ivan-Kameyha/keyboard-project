@@ -3,7 +3,7 @@ import { BsPersonCircle } from "react-icons/bs";
 import "./Home.css";
 import { useAuth } from "../../context/AuthContext";
 import { TextToSpeechButton } from "../textToSpeechButton/TextToSpeechButton";
-import {ShortcutKeys} from '../shortcutKeys/ShortcutKeys'
+import { ShortcutKeys } from "../shortcutKeys/ShortcutKeys";
 
 export const Home = () => {
   // se extrae el estado user, loading y la funcion logout del contexto
@@ -61,7 +61,7 @@ export const Home = () => {
           <TextToSpeechButton text={"Cerrar sesion"} />
         </Button>
       </div>
-      <ShortcutKeys/>
+      <ShortcutKeys />
     </div>
   );
 };

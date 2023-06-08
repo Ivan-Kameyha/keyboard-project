@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Container, Button } from "react-bootstrap";
 import "./Keyboard.css";
-import {ShortcutKeys} from '../shortcutKeys/ShortcutKeys'
-import Sonido from '../shortcutKeys/Sonido'
+import { ShortcutKeys } from "../shortcutKeys/ShortcutKeys";
+import Sonido from "../shortcutKeys/Sonido";
 
 export const Keyboard = () => {
   const keys = [
